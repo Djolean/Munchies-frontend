@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { LoginService } from '../login.service';
-import { AngularMaterialModule } from '../angular-material.module';
+import { LoginService } from '../../login.service';
+import { AngularMaterialModule } from '../../angular-material.module';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { Router } from '@angular/router';
-import { RestaurantsComponent } from '../restaurants/restaurants.component';
+import { RestaurantsComponent } from '../../restaurants/restaurants.component';
 
 @Component({
   imports: [AngularMaterialModule, FormsModule, HttpClientModule],
