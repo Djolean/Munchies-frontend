@@ -6,7 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { DatePipe } from '@angular/common';
 import { CommonModule } from '@angular/common';
 import { RestaurantDetailsComponent } from '../restaurant-details/restaurant-details.component';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   imports: [AngularMaterialModule, FormsModule, HttpClientModule, CommonModule, RestaurantDetailsComponent, RouterModule],
@@ -14,7 +14,7 @@ import { RouterModule } from '@angular/router';
   standalone: true,
   templateUrl: './restaurants.component.html', 
   styleUrl: './restaurants.component.css',
-  providers: [RestaurantsService, DatePipe],
+  providers: [RestaurantsService],
 })
 
 export class RestaurantsComponent implements OnInit {

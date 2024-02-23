@@ -1,0 +1,43 @@
+<div fxLayout="column" fxLayoutAlign="center center" style="display: table-caption;">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title><h1>Add New Restaurant</h1></mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <form (ngSubmit)="onSubmit()">
+          <mat-form-field appearance="fill">
+            <mat-label>Restaurant Name</mat-label>
+            <input matInput [(ngModel)]="restaurantName" name="restaurantName" required>
+          </mat-form-field>
+  
+          <mat-form-field appearance="fill">
+            <mat-label>Address</mat-label>
+            <input matInput [(ngModel)]="address" name="address" required>
+          </mat-form-field>
+  
+          <mat-form-field appearance="fill">
+            <mat-label>Phone Number</mat-label>
+            <input matInput [(ngModel)]="phoneNumber" name="phoneNumber" required pattern="^\+\d+$">
+          </mat-form-field>
+  
+          <mat-form-field appearance="fill">
+            <mat-label>Menu URL</mat-label>
+            <input matInput [(ngModel)]="menuUrl" name="menuUrl" required>
+          </mat-form-field>
+  
+          <mat-form-field appearance="fill">
+            <mat-label>Delivery Time</mat-label>
+            <input matInput [(ngModel)]="deliveryTime" name="deliveryTime" required>
+          </mat-form-field>
+  
+          <mat-form-field appearance="fill">
+            <mat-label>Additional Charges</mat-label>
+            <input matInput [(ngModel)]="additionalCharges" name="additionalCharges">
+          </mat-form-field>
+  
+          <button mat-raised-button color="primary" type="submit">Add Restaurant</button>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  

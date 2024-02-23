@@ -9,25 +9,19 @@ import { throwError } from 'rxjs';
 })
 
 export class RestaurantsService {
+  
   private apiUrl = 'http://localhost:8080'; 
-  token = localStorage.getItem('token');
 
   constructor(private http: HttpClient) {}
 
   getRestaurants(): Observable<any[]> {
-
-    if (!this.token) {
-      console.error('User not authed!');
-      return throwError(() => new Error('User not authenticated'));
-    }
-
-    const headers = {
-      Authorization: `Basic ${this.token}`
-    };
-
-    return this.http.get<any[]>(`${this.apiUrl}/rest/allRestaurants`, { headers })
-      
+    return this.http.get<any[]>(`${this.apiUrl}/rest/allRestaurants`)
   }
+
+  addRestaurant(restaurantData: any): Observable<any> {
+    return this.http.post<any>(`${this.apiUrl}/rest/add`, restaurantData);
+  }
+
   getRestaurantById(restaurantId: number): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}/restaurants/${restaurantId}`);
   }

@@ -3,6 +3,7 @@ import { LoginComponent } from './login/login.component';
 import { RestaurantsComponent } from './restaurants/restaurants.component';
 import { RestaurantDetailsComponent } from './restaurant-details/restaurant-details.component';
 import { CreateGroupOrderComponent } from './create-group-order/create-group-order.component';
+import { AddRestaurantComponent } from './add-restaurant/add-restaurant.component';
 
 export const routes: Routes = [
     {
@@ -13,6 +14,9 @@ export const routes: Routes = [
     },
     { 
         path: 'restaurants', component: RestaurantsComponent 
+    },
+    { 
+        path: 'add-restaurant', component: AddRestaurantComponent
     },
     { 
         path: 'restaurants/:id', component: RestaurantDetailsComponent
