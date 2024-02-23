@@ -1,14 +1,16 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterModule, RouterOutlet } from '@angular/router';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { LoginComponent } from './pages/login/login.component';
+import { LoginComponent } from './login/login.component';
 import { RestaurantsComponent } from './restaurants/restaurants.component';
+import { RestaurantDetailsComponent } from './restaurant-details/restaurant-details.component';
+import { CreateGroupOrderComponent } from './create-group-order/create-group-order.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, MatFormFieldModule, ReactiveFormsModule, FormsModule, LoginComponent, RestaurantsComponent],
+  imports: [RouterOutlet, MatFormFieldModule, ReactiveFormsModule, FormsModule, LoginComponent, RestaurantsComponent, RestaurantDetailsComponent, CreateGroupOrderComponent, RouterModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

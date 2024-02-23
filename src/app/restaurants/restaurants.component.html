@@ -1,1 +1,51 @@
-<p>Restaurants works!</p>
+<div fxLayout="column" fxLayoutAlign="center center" style="height: 100vh;">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title><h1>Restaurant List</h1></mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <mat-table [dataSource]="restaurants">
+
+          <ng-container matColumnDef="restaurantName">
+            <mat-header-cell *matHeaderCellDef> Restaurant Name </mat-header-cell>
+            <mat-cell *matCellDef="let restaurant"> {{ restaurant.restaurantName }} </mat-cell>
+          </ng-container>
+  
+          <ng-container matColumnDef="address">
+            <mat-header-cell *matHeaderCellDef> Address </mat-header-cell>
+            <mat-cell *matCellDef="let restaurant"> {{ restaurant.address }} </mat-cell>
+          </ng-container>
+  
+          <ng-container matColumnDef="menuUrl">
+            <mat-header-cell *matHeaderCellDef> Menu URL </mat-header-cell>
+            <mat-cell *matCellDef="let restaurant"> {{ restaurant.menuUrl }} </mat-cell>
+          </ng-container>
+  
+          <ng-container matColumnDef="createdDate">
+            <mat-header-cell *matHeaderCellDef> Created Date </mat-header-cell>
+            <mat-cell *matCellDef="let restaurant">
+              {{ restaurant.createdDate | date:'yyyy-MM-dd HH:mm:ss' }}
+            </mat-cell>
+          </ng-container>
+  
+          <ng-container matColumnDef="actions">
+            <mat-header-cell *matHeaderCellDef> Actions </mat-header-cell>
+            <mat-cell *matCellDef="let restaurant">
+              <button mat-icon-button color="primary" [routerLink]="['/restaurants', restaurant.restaurantId]">
+                <mat-icon>visibility</mat-icon>
+              </button>
+          
+              <button mat-icon-button color="accent" [routerLink]="['/create-group-order', restaurant.restaurantId]">
+                <mat-icon>group_add</mat-icon>
+              </button>
+            </mat-cell>
+          </ng-container>
+          
+        
+          <mat-header-row *matHeaderRowDef="['restaurantName', 'address', 'menuUrl', 'createdDate', 'actions']"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: ['restaurantName', 'address', 'menuUrl', 'createdDate', 'actions']"></mat-row>
+        </mat-table>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  
