@@ -1,8 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs'; 
-import { catchError } from 'rxjs/operators';
-import { throwError } from 'rxjs'; 
 
 @Injectable({
   providedIn: 'root'
@@ -22,11 +20,12 @@ export class RestaurantsService {
     return this.http.post<any>(`${this.apiUrl}/rest/add`, restaurantData);
   }
 
-  getRestaurantById(restaurantId: number): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}/restaurants/${restaurantId}`);
+  getRestaurantById(restaurantId: String): Observable<any> {
+    console.log(restaurantId);
+    return this.http.get<any>(`${this.apiUrl}/rest/${restaurantId}`);
   }
 
-  createGroupOrder(restaurantId: number): Observable<any> {
+  createGroupOrder(restaurantId: string): Observable<any> {
     return this.http.post<any>(`${this.apiUrl}/create-group-order/${restaurantId}`, {});
   }
 }

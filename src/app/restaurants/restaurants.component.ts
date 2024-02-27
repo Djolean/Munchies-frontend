@@ -3,7 +3,6 @@ import { RestaurantsService } from '../restaurants.service';
 import { AngularMaterialModule } from '../angular-material.module';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { DatePipe } from '@angular/common';
 import { CommonModule } from '@angular/common';
 import { RestaurantDetailsComponent } from '../restaurant-details/restaurant-details.component';
 import { Router, RouterModule } from '@angular/router';

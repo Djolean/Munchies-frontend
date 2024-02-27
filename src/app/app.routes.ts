@@ -4,6 +4,8 @@ import { RestaurantsComponent } from './restaurants/restaurants.component';
 import { RestaurantDetailsComponent } from './restaurant-details/restaurant-details.component';
 import { CreateGroupOrderComponent } from './create-group-order/create-group-order.component';
 import { AddRestaurantComponent } from './add-restaurant/add-restaurant.component';
+import { AuthGuard } from './auth.guard';
+import { RestaurantsService } from './restaurants.service';
 
 export const routes: Routes = [
     {
@@ -16,10 +18,11 @@ export const routes: Routes = [
         path: 'restaurants', component: RestaurantsComponent 
     },
     { 
-        path: 'add-restaurant', component: AddRestaurantComponent
+        path: 'add-restaurant', component: AddRestaurantComponent,
+        canActivate: [AuthGuard]
     },
     { 
-        path: 'restaurants/:id', component: RestaurantDetailsComponent
+        path: 'restaurant/:id', component: RestaurantDetailsComponent,
     },
     { 
         path: 'create-group-order/:id', component: CreateGroupOrderComponent
